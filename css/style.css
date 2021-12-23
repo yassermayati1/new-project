@@ -1,6 +1,6 @@
 
 .header{
-	background-image: url('image/header.jpg');
+	background-image: url('https://wallpapercave.com/wp/wp2088351.jpg');
 	padding: 15px;
 }
 .nav_up{
@@ -28,6 +28,9 @@
 .nav-link:hover{
 	background-color: #88b3eb;
 }
+.navbar-light .navbar-brand{
+	padding-right: 100px;
+}
 .bakiye , .burc{
 	background-color: #88b3eb;
     padding: 10px;
@@ -47,10 +50,7 @@
 	text-decoration: underline;
 	cursor:pointer;
 }
-.dropdown-item:hover{
-	background-color: #88b3eb;
 
-}
 .navbar {
 	background-color: #d6d6d6;
 	padding: 0;
