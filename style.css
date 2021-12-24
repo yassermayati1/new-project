@@ -275,10 +275,42 @@ article{
 .game-option-header{
   width: 100%;
   padding: 30px;
-  background-color: #636363;
+  background-color: #010a01;
   letter-spacing: 10px;
   text-align: center;
   margin: 0;
+  animation: pulsate 0.11s ease-in-out infinite alternate;     
+
+}
+@keyframes pulsate {
+    
+  100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #f09,
+      0 0 80px #f09,
+      0 0 90px #f09,
+      0 0 100px #f09,
+      0 0 150px #f09;
+  
+  }
+  
+  0% {
+
+    text-shadow:
+    0 0 4px #fff,
+    0 0 10px #fff,
+    0 0 18px #fff,
+    0 0 38px #f09,
+    0 0 73px #f09,
+    0 0 80px #f09,
+    0 0 94px #f09,
+    0 0 140px #f09;
+
+}
 }
 .option{
   border: 1px solid #000;
@@ -306,6 +338,18 @@ article{
   background: linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(26,188,156,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#1abc9c', GradientType=1 );
 }
+.neonText {
+  color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f09,
+      0 0 82px #f09,
+      0 0 92px #f09,
+      0 0 102px #f09,
+      0 0 151px #f09;
+  }
 
 .button:after {
   background: #2c3e50;
@@ -318,8 +362,8 @@ article{
   position: relative;
   border-radius: 3px;
   text-decoration: none;
-  padding: .3em;
-  font-size: 1em;
+  padding: 5PX 20PX 5PX 20PX;
+    font-size: 1em;
   font-weight: bold;
   transition: all .5s;
   -webkit-background-clip: text;
