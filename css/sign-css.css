@@ -70,7 +70,9 @@ canvas {
   transition: border-color 500ms ease;
   z-index: 1;
 }
-
+.bg-img{
+  background-image:url('https://i.pinimg.com/originals/4d/9d/3f/4d9d3f0f71a32bdd3d19d0b572bab2c1.jpg')
+}
 .input-box label {
   position: absolute;
   top: 0;
@@ -132,6 +134,7 @@ canvas {
 .input-box .input:valid {
   border-color: #AFFDC5;
   border-radius: 0 0 .2em .2em;
+  color: #fff;
 }
 
 .input-box .input:valid~label {
