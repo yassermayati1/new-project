@@ -35,33 +35,12 @@ body{
     width: 430px;
     height: 520px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-90%,-90%);
     left: 50%;
     top: 50%;
 }
-.background .shape{
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    border-radius: 50%;
-}
-.shape:first-child{
-    background: linear-gradient(
-        #1845ad,
-        #23a2f6
-    );
-    left: -80px;
-    top: -80px;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -30px;
-    bottom: -80px;
-}
+
+
 form{
     height: 520px;
     width: 400px;
@@ -76,13 +55,7 @@ form{
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
 }
-form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
+
 form h3{
     font-size: 32px;
     font-weight: 500;
@@ -121,41 +94,34 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-.social{
-  margin-top: 30px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
 
     </style>
 </head>
 <body>
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
+    
     <canvas id='c'></canvas>
 
-    <form>
-        <h3>Login Here</h3>
-
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
-
-        <button>Log In</button>
-        
-    </form>
+    <div id="login-button">
+        <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png">
+        </img>
+      </div>
+      <div id="container">
+        <h1>Log In</h1>
+        <span class="close-btn">
+          <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
+        </span>
+      
+        <form>
+          <input type="email" name="email" placeholder="NUMARA VEYE KULLANICI ADI">
+          <input type="password" name="pass" placeholder="SIFRE">
+          <a href="#">Log in</a>
+          <div id="remember-container">
+            <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked"/>
+            <span id="remember">Beni Hatırla</span>
+          </div>
+      </form>
+      </div>
+      <!-- Forgotten Password Container -->
         <script src="../js/all.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/jquery-3.6.0.min.js"></script>
