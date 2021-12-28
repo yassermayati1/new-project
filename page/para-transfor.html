@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            EL ZERO TEK
+        </title>
+        <meta charset="UTF-8" />
+        <meta name="copyright" content="Your Company Or Brand Name" />
+        <meta name="description" content="Your Website Description"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/all.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f1f1f1;
+        }
+        
+        #regForm {
+            background-color: #ffffff;
+            margin: 100px auto;
+            font-family: Raleway;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;
+        }
+        
+        h1 {
+            text-align: center;  
+        }
+        
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+        }
+        
+        /* Mark input boxes that gets an error on validation: */
+        input.invalid {
+            background-color: #ffdddd;
+        }
+        
+        /* Hide all steps by default: */
+        .tab {
+            display: none;
+        }
+        
+        button {
+            background-color: #04AA6D;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Raleway;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        #prevBtn {
+            background-color: #bbbbbb;
+        }
+        
+        /* Make circles that indicate the steps of the form: */
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;  
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+        
+        .step.active {
+            opacity: 1;
+        }
+        
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #04AA6D;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <header>
+            <div class="header" >
+            <section class="nav_up">
+            <div class="container">
+                
+                    <h2>EL ZERO</h2>
+                    <div class="bakiye_up">
+                        <div class="bakiye">
+                            
+                            <span class="kalan"> Bakiye : </span>
+                            <span class="kalan_number">1000</span>
+                            <span class="tl_icon"><i class="fas fa-lira-sign"></i></span>
+                        </div>
+                        <div class="burc">
+                            
+                            <span class="burc_name">borç : </span>
+                            <span class="kalan_number">5000</span>
+                            <span class="tl_icon"><i class="fas fa-lira-sign"></i></span>
+                        </div>
+                        <div class="user">
+                            <img src="https://img.icons8.com/office/16/000000/user.png" width="35" height="35"/></span>
+                            <span class="user-name"><b>kullanici</b></span>
+                            <a class="cikis" href="page/sign.html">
+                                <span class="Sign-Out">çıkış </span>
+                            </a>          
+                        </div>
+                    </div>
+            </div>
+        </section>
+        </div>
+            <div class="hr"></div>
+            <nav class="navbar navbar-expand-lg navbar-light" >
+                <div class="container">
+                <a class="navbar-brand" href="#"><img src="https://img.icons8.com/office/16/000000/home--v1.png" width="25" height="25"/> Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                    
+                    <li class="nav-item ">
+                            <a class="nav-link " href="#"   role="button">
+                                <img src="https://img.icons8.com/office/16/000000/phone.png" width="30" height="30"/> Kontor
+                            </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" >
+                            <img src="https://img.icons8.com/fluency/48/000000/invoice.png" width="30" height="30"/> Fatura
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#" >
+                            <img src="https://img.icons8.com/cute-clipart/48/000000/controller.png" width="30" height="30"/> Oyun
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">
+                        <img src="https://img.icons8.com/office/16/000000/money--v1.png"  width="35" height="30"/> Para Transferi
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">
+                            <img src="https://img.icons8.com/clouds/100/000000/other-messages.png"  width="35" height="30"/> Diğer
+                        </a>  
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">
+                            <img src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-setting-notifications-justicon-flat-justicon.png"  width="35" height="30"/> Ayarlar
+                        </a>  
+                    </li>
+
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+            <article>
+                <div class="container">
+                    <form id="regForm" action="/action_page.php">
+                      <h1> Para Transferi</h1>
+                      <!-- One "tab" for each step in the form: -->
+                      <div class="tab">Adı:
+                        <p><input placeholder="Adı..." oninput="this.className = ''" name="fname"></p>
+                        <p><input placeholder="Soyad..." oninput="this.className = ''" name="lname"></p>
+                      </div>
+                      <div class="tab">İletişim Bilgileri:
+                        <p><input placeholder="Telefon..." oninput="this.className = ''" name="phone"></p>
+                        <p><input placeholder="Yer..." oninput="this.className = ''" name="Yer"></p>
+                      </div>
+                          <div style="overflow:auto;">
+                        <div style="float:right;">
+                          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                      </div>
+                      <!-- Circles which indicates the steps of the form: -->
+                      <div style="text-align:center;margin-top:40px;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                      </div>
+                    </form>
+                    
+                    
+                </div>   
+            </article>
+        <footer style="margin-top: 100px;">
+            <section class="section-footer">
+                <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                    <h3>Call Us</h3>
+                    <p><img src="https://img.icons8.com/nolan/64/phone-disconnected.png" width="30" height="30"/> +90 537 450 47 41 </p>
+                    <p><img src="https://img.icons8.com/office/16/000000/gmail-login.png" width="30" height="30"/> yasser.mayati1@gmail.com</p>
+                    </div>
+                    <div class="col-4">
+                    <h3>Our Adress</h3>
+                    <p><img src="https://img.icons8.com/dusk/64/000000/home.png" width="30" height="30"/> Kahramanmaras</p>
+                    <p>Dumlupinar Mah.</p>
+                    <p>Sait Zarifoglu Blv.</p>
+                    </div>
+                    <div class="col-4">
+                    <h3>For US</h3>
+                    <iframe src="https://www.google.com" title="google">
+                    </iframe>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </footer>
+        <script  src="../js/all.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            var currentTab = 0; // Current tab is set to be the first tab (0)
+            showTab(currentTab); // Display the current tab
+            
+            function showTab(n) {
+              // This function will display the specified tab of the form...
+              var x = document.getElementsByClassName("tab");
+              x[n].style.display = "block";
+              //... and fix the Previous/Next buttons:
+              if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+              } else {
+                document.getElementById("prevBtn").style.display = "inline";
+              }
+              if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+              } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+              }
+              //... and run a function that will display the correct step indicator:
+              fixStepIndicator(n)
+            }
+            
+            function nextPrev(n) {
+              // This function will figure out which tab to display
+              var x = document.getElementsByClassName("tab");
+              // Exit the function if any field in the current tab is invalid:
+              if (n == 1 && !validateForm()) return false;
+              // Hide the current tab:
+              x[currentTab].style.display = "none";
+              // Increase or decrease the current tab by 1:
+              currentTab = currentTab + n;
+              // if you have reached the end of the form...
+              if (currentTab >= x.length) {
+                // ... the form gets submitted:
+                document.getElementById("regForm").submit();
+                return false;
+              }
+              // Otherwise, display the correct tab:
+              showTab(currentTab);
+            }
+            
+            function validateForm() {
+              // This function deals with validation of the form fields
+              var x, y, i, valid = true;
+              x = document.getElementsByClassName("tab");
+              y = x[currentTab].getElementsByTagName("input");
+              // A loop that checks every input field in the current tab:
+              for (i = 0; i < y.length; i++) {
+                // If a field is empty...
+                if (y[i].value == "") {
+                  // add an "invalid" class to the field:
+                  y[i].className += " invalid";
+                  // and set the current valid status to false
+                  valid = false;
+                }
+              }
+              // If the valid status is true, mark the step as finished and valid:
+              if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+              }
+              return valid; // return the valid status
+            }
+            
+            function fixStepIndicator(n) {
+              // This function removes the "active" class of all steps...
+              var i, x = document.getElementsByClassName("step");
+              for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+              }
+              //... and adds the "active" class on the current step:
+              x[n].className += " active";
+            }
+            </script>
+        
+    </body>
+    </html>

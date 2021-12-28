@@ -11,3 +11,4 @@ $('#navbar-toggle').click(function() {
         }
     }
 })
+
