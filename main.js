@@ -195,3 +195,4 @@ $(window).scroll(function () {
           	$('.side-navigation').removeClass('bottom');
       	}
 });
+

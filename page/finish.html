@@ -11,19 +11,182 @@
         <link rel="stylesheet" href="../css/all.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="../css/sign-css.css">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        <style>
+                * { box-sizing:border-box; }
+                        h2     { 
+                        text-align:center; 
+                        margin-bottom:50px; 
+                        }
+                        h2 small { 
+                        font-weight:normal; 
+                        color:#888; 
+                        display:block; 
+                        }
+                        .footer   { text-align:center; }
+                        .footer a  { color:#53B2C8; }
 
+                        /* form starting stylings ------------------------------- */
+                        .group        { 
+                        position:relative; 
+                        margin-bottom:45px; 
+                        }
+                        input         {
+                        font-size:18px;
+                        padding:10px 10px 10px 5px;
+                        display:block;
+                        width:300px;
+                        border:none;
+                        border-bottom:1px solid #757575;
+                        }
+                        input:focus     { outline:none; }
+
+                        /* LABEL ======================================= */
+                        label          {
+                        color:#999; 
+                        font-size:18px;
+                        font-weight:normal;
+                        position:absolute;
+                        pointer-events:none;
+                        left:5px;
+                        top:10px;
+                        transition:0.2s ease all; 
+                        -moz-transition:0.2s ease all; 
+                        -webkit-transition:0.2s ease all;
+                        }
+
+                        /* active state */
+                        input:focus ~ label, input:valid ~ label    {
+                        top:-20px;
+                        font-size:14px;
+                        color:#000000;
+                        }
+
+                        /* BOTTOM BARS ================================= */
+                        .bar  { position:relative; display:block; width:300px; }
+                        .bar:before, .bar:after   {
+                        content:'';
+                        height:2px; 
+                        width:0;
+                        bottom:1px; 
+                        position:absolute;
+                        background:#5264AE; 
+                        transition:0.2s ease all; 
+                        -moz-transition:0.2s ease all; 
+                        -webkit-transition:0.2s ease all;
+                        }
+                        .bar:before {
+                        left:50%;
+                        }
+                        .bar:after {
+                        right:50%; 
+                        }
+
+                        /* active state */
+                        input:focus ~ .bar:before, input:focus ~ .bar:after {
+                        width:50%;
+                        }
+
+                        /* HIGHLIGHTER ================================== */
+                        .highlight {
+                        position:absolute;
+                        width:100px; 
+                        top:25%; 
+                        left:0;
+                        pointer-events:none;
+                        opacity:0.5;
+                        }
+
+                        /* active state */
+                        input:focus ~ .highlight {
+                        -webkit-animation:inputHighlighter 0.3s ease;
+                        -moz-animation:inputHighlighter 0.3s ease;
+                        animation:inputHighlighter 0.3s ease;
+                        }
+
+                        /* ANIMATIONS ================ */
+                        @-webkit-keyframes inputHighlighter {
+                        from { background:#5264AE; }
+                        to  { width:0; background:transparent; }
+                        }
+                        @-moz-keyframes inputHighlighter {
+                        from { background:#5264AE; }
+                        to  { width:0; background:transparent; }
+                        }
+                        @keyframes inputHighlighter {
+                        from { background:#5264AE; }
+                        to  { width:0; background:transparent; }
+                        }
+                        :root {
+	--bg: #3C465C;
+	--primary: #78FFCD;
+	--solid: #fff;
+	--btn-w: 10em;
+	--dot-w: calc(var(--btn-w)*.2);
+	--tr-X: calc(var(--btn-w) - var(--dot-w));
+}
+
+.btn {
+	position: relative;
+	margin: 0 auto;
+	width: var(--btn-w);
+	color: var(--primary);
+	border: .15em solid var(--primary);
+	border-radius: 5em;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 2em;
+	cursor: pointer;	
+}
+.dot {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: var(--dot-w);
+	height: 100%;
+	border-radius: 100%;
+	transition: all 300ms ease;
+	display: none;
+}
+.dot:after {
+	content: '';
+	position: absolute;
+	left: calc(50% - .4em);
+	top: -.4em;
+	height: .8em;
+	width: .8em;
+	background: var(--primary);
+	border-radius: 1em;
+	border: .25em solid var(--solid);
+	box-shadow: 0 0 .7em var(--solid),
+				0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+	animation: atom 2s infinite linear;
+	display: block;
+}
+@keyframes atom {
+	0% {transform: translateX(0) rotate(0);}
+	30%{transform: translateX(var(--tr-X)) rotate(0);}
+	50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+	80% {transform: translateX(0) rotate(180deg);}
+	100% {transform: translateX(0) rotate(360deg);}
+}
+
+        </style>
         
     </head>
     <body>
         <header>
             <div class="header" >
             <section class="nav_up">
-            <div class="container" style="display: block;">
+            <div class="container">
                 
                     <h2>EL ZERO</h2>
                     <div class="bakiye_up">
@@ -95,7 +258,6 @@
                             <img src="https://img.icons8.com/clouds/100/000000/other-messages.png"  width="35" height="30"/> Diğer
                         </a>  
                     </li>
-
                     <li class="nav-item ">
                         <a class="nav-link " href="#">
                             <img src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-setting-notifications-justicon-flat-justicon.png"  width="35" height="30"/> Ayarlar
@@ -107,38 +269,51 @@
                 </div>
             </nav>
         </header>
-            <article class="finish">
-                <section class="forms">
-                        <section class="content bgcolor-3">
-                            <div class="bg-img" style="height: 600px;">
-                                <div class="container">
+        <h2 class="game-option-header neonText">GOOGLE PLAY</h2>
+        <article class="finish" style="background-image:url('https://i.pinimg.com/originals/4d/9d/3f/4d9d3f0f71a32bdd3d19d0b572bab2c1.jpg');">
+            <section class="content bgcolor-3">
+                <div class="bg-img" style="padding: 100px;">
+                    <div class="container">
+                        <div class="forms" style="background-color: #fffff985; padding: 25px; border-radius: 25px;">
+                            <div class="row">
+                                <div class="col-m-6">
                                     <img src="https://img.icons8.com/color-glass/90/000000/google-play.png"/>
-                                    <br>
-                                    <h2 style="color:#fff"> GOOGLE PLAY 25TL</h2>
-                                    <div class="box">
-                                        <h2>ADD YOUR INFO</h2>
-                                        <div class="form-wrap">
-                                            <form action="">
-                                                <div class="input-box">
-                                                    <input type="text" class="input" id="username" placeholder="YOUR INFO" required maxlength="10">
-                                                    <label for="username">YOUR NUMBER</label>
+                                        <h2 style="color:#333"> GOOGLE PLAY 25TL</h2>
+                                </div>
+                                <hr>
+                                <div class="col-m-6">
+                                    <div class="box" style="margin: 0px 38%">
+                                        <h2>ADD YOUR INFO</h2>                                        
+                                        <form>
+                                            <div class="group">      
+                                                <input type="text" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                <label>NUMARA</label>
+                                            </div>
+                                            <div class="group">      
+                                                <input type="text" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                <label>Quantity ( Default )</label>
+                                            </div>
+                                            <div class="container">	
+                                                <div class="btn">
+                                                    <span>SATIN AL</span>
+                                                    <div class="dot"></div>
                                                 </div>
-                                                <div class="input-box">
-                                                    <input type="TEXT1" class="input" id="password" placeholder="Quantity" required>
-                                                    <label for="TEXT1">Quantity (Default 1)</label>
-                                                </div>
-                                                <div class="input-box">
-                                                    <input type="submit" class="btn-submit" value="SATIN AL" required>
-                                                </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                            
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        </section> 
-                </section>
-            </article>
-        <footer>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+        </article>
+        <footer style="margin-top: 0px;">
             <section class="section-footer">
                 <div class="container">
                 <div class="row">
@@ -165,6 +340,7 @@
         <script script src="../js/all.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="../js/main.js"></script>
+        <SCript src="..js/main.js"></SCript>
     </body>
     </html>
