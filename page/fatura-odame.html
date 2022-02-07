@@ -10,161 +10,311 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/all.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../css/optin-fatura.css">
         <link rel="stylesheet" href="../style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        <style>
+                * { box-sizing:border-box; }
+                        h2     { 
+                        text-align:center; 
+                        margin-bottom:50px; 
+                        }
+                        h2 small { 
+                        font-weight:normal; 
+                        color:#888; 
+                        display:block; 
+                        }
+                        .footer   { text-align:center; }
+                        .footer a  { color:#53B2C8; }
+
+                        /* form starting stylings ------------------------------- */
+                        .group        { 
+                        position:relative; 
+                        margin-bottom:45px; 
+                        }
+                        input         {
+                        font-size:18px;
+                        padding:10px 10px 10px 5px;
+                        display:block;
+                        width:300px;
+                        border:none;
+                        border-bottom:1px solid #757575;
+                        }
+                        input:focus     { outline:none; }
+
+                        /* LABEL ======================================= */
+                        label          {
+                        color:#999; 
+                        font-size:18px;
+                        font-weight:normal;
+                        position:absolute;
+                        pointer-events:none;
+                        left:5px;
+                        top:10px;
+                        transition:0.2s ease all; 
+                        -moz-transition:0.2s ease all; 
+                        -webkit-transition:0.2s ease all;
+                        }
+
+                        /* active state */
+                        input:focus ~ label, input:valid ~ label    {
+                        top:-20px;
+                        font-size:14px;
+                        color:#000000;
+                        }
+
+                        /* BOTTOM BARS ================================= */
+                        .bar  { position:relative; display:block; width:300px; }
+                        .bar:before, .bar:after   {
+                        content:'';
+                        height:2px; 
+                        width:0;
+                        bottom:1px; 
+                        position:absolute;
+                        background:#5264AE; 
+                        transition:0.2s ease all; 
+                        -moz-transition:0.2s ease all; 
+                        -webkit-transition:0.2s ease all;
+                        }
+                        .bar:before {
+                        left:50%;
+                        }
+                        .bar:after {
+                        right:50%; 
+                        }
+
+                        /* active state */
+                        input:focus ~ .bar:before, input:focus ~ .bar:after {
+                        width:50%;
+                        }
+
+                        /* HIGHLIGHTER ================================== */
+                        .highlight {
+                        position:absolute;
+                        width:100px; 
+                        top:25%; 
+                        left:0;
+                        pointer-events:none;
+                        opacity:0.5;
+                        }
+
+                        /* active state */
+                        input:focus ~ .highlight {
+                        -webkit-animation:inputHighlighter 0.3s ease;
+                        -moz-animation:inputHighlighter 0.3s ease;
+                        animation:inputHighlighter 0.3s ease;
+                        }
+
+                        /* ANIMATIONS ================ */
+                        @-webkit-keyframes inputHighlighter {
+                        from { background:#5264AE; }
+                        to  { width:0; background:transparent; }
+                        }
+                        @-moz-keyframes inputHighlighter {
+                        from { background:#5264AE; }
+                        to  { width:0; background:transparent; }
+                        }
+                        @keyframes inputHighlighter {
+                        from { background:#5264AE; }
+                        to  { width:0; background:transparent; }
+                        }
+                        :root {
+	--bg: #3C465C;
+	--primary: #78FFCD;
+	--solid: #fff;
+	--btn-w: 10em;
+	--dot-w: calc(var(--btn-w)*.2);
+	--tr-X: calc(var(--btn-w) - var(--dot-w));
+}
+
+.btn {
+	position: relative;
+	margin: 0 auto;
+	width: var(--btn-w);
+	color: var(--primary);
+	border: .15em solid var(--primary);
+	border-radius: 5em;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 2em;
+	cursor: pointer;	
+}
+.dot {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: var(--dot-w);
+	height: 100%;
+	border-radius: 100%;
+	transition: all 300ms ease;
+	display: none;
+}
+.dot:after {
+	content: '';
+	position: absolute;
+	left: calc(50% - .4em);
+	top: -.4em;
+	height: .8em;
+	width: .8em;
+	background: var(--primary);
+	border-radius: 1em;
+	border: .25em solid var(--solid);
+	box-shadow: 0 0 .7em var(--solid),
+				0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+	animation: atom 2s infinite linear;
+	display: block;
+}
+@keyframes atom {
+	0% {transform: translateX(0) rotate(0);}
+	30%{transform: translateX(var(--tr-X)) rotate(0);}
+	50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+	80% {transform: translateX(0) rotate(180deg);}
+	100% {transform: translateX(0) rotate(360deg);}
+}
+
+        </style>
+        
     </head>
     <body>
         <header>
             <div class="header" >
             <section class="nav_up">
             <div class="container">
+                
                     <h2>EL ZERO</h2>
                     <div class="bakiye_up">
                         <div class="bakiye">
+                            
                             <span class="kalan"> Bakiye : </span>
                             <span class="kalan_number">1000</span>
                             <span class="tl_icon"><i class="fas fa-lira-sign"></i></span>
                         </div>
-                        <div class="burc">
-                            <span class="burc_name">borç : </span>
-                            <span class="kalan_number">5000</span>
-                            <span class="tl_icon"><i class="fas fa-lira-sign"></i></span>
-                        </div>
-                        <div class="user">
-                            <img src="https://img.icons8.com/office/16/000000/user.png" width="35" height="35"/></span>
-                            <span class="user-name"><b>kullanici</b></span>
-                            <a class="cikis" href="page/sign.html">
-                                <span class="Sign-Out">çıkış </span>
-                            </a>    
-                        </div>
-                    </div>   
+                        
+                        
+                    </div>
+                    
+                
             </div>
         </section>
+        
         </div>
+            
             <div class="hr"></div>
-            <nav class="navbar navbar-expand-lg navbar-light " >
+            <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container">
-                <a class="navbar-brand" href="#"><img src="https://img.icons8.com/office/16/000000/home--v1.png" width="25" height="25"/> Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <a class="navbar-brand" href="../index.html"><img src="https://img.icons8.com/office/16/000000/home--v1.png" width="25"
+                      height="25" /> ANA SAYIFE</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                    
-                    <li class="nav-item ">
-                            <a class="nav-link " href="#"   role="button">
-                                <img src="https://img.icons8.com/office/16/000000/phone.png" width="30" height="30"/> Kontor
-                            </a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#" >
-                            <img src="https://img.icons8.com/fluency/48/000000/invoice.png" width="30" height="30"/> Fatura
+          
+                      <li class="nav-item ">
+                        <a class="nav-link " href="#" role="button">
+                          <img src="https://img.icons8.com/office/16/000000/phone.png" width="30" height="30" /> Kontor
                         </a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <a class="nav-link " href="#" >
-                            <img src="https://img.icons8.com/cute-clipart/48/000000/controller.png" width="30" height="30"/> Oyun
+                      </li>
+          
+                      <li class="nav-item ">
+                        <a class="nav-link" href="fatura.html">
+                          <img src="https://img.icons8.com/fluency/48/000000/invoice.png" width="30" height="30" /> Fatura
                         </a>
-                    </li>
-                    
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">
-                        <img src="https://img.icons8.com/office/16/000000/money--v1.png"  width="35" height="30"/> Para Transferi
+                      </li>
+          
+                      <li class="nav-item ">
+                        <a class="nav-link " href="games.html">
+                          <img src="https://img.icons8.com/cute-clipart/48/000000/controller.png" width="30" height="30" /> Oyun
                         </a>
-                    </li>
-
-                    <li class="nav-item ">
+                      </li>
+          
+                      <li class="nav-item ">
+                        <a class="nav-link" href="para-transfor.html">
+                          <img src="https://img.icons8.com/office/16/000000/money--v1.png" width="35" height="30" /> Para
+                          Transferi
+                        </a>
+                      </li>
+          
+                      <li class="nav-item ">
                         <a class="nav-link " href="#">
-                            <img src="https://img.icons8.com/clouds/100/000000/other-messages.png"  width="35" height="30"/> Diğer
-                        </a>  
-                    </li>
-                    <li class="nav-item ">
+                          <img src="https://img.icons8.com/clouds/100/000000/other-messages.png" width="35" height="30" /> Diğer
+                        </a>
+                      </li>
+                      <li class="nav-item ">
                         <a class="nav-link " href="#">
-                            <img src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-setting-notifications-justicon-flat-justicon.png"  width="35" height="30"/> Ayarlar
-                        </a>  
-                    </li>
-
+                          <img
+                            src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-setting-notifications-justicon-flat-justicon.png"
+                            width="35" height="30" /> Ayarlar
+                        </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link " href="#">
+                          <img src="https://img.icons8.com/cute-clipart/30/000000/logout-rounded.png" /> cikis
+                        </a>
+                      </li>
                     </ul>
+                  </div>
                 </div>
-                </div>
-            </nav>
+              </nav>
         </header>
-        <div class="back-photo" style="padding-top: 0px; padding-bottom: 0px;">
-                <div class="sidebar">
-                    <ul class="sidebar-nav">
-                        <li>
-                            <a id="navbar-toggle">Close <i class="fa fa-bars menu-icon fa-2x" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">Elektrik <i class="fa fa-bolt menu-icon fa-2x" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">Su<i class="fa fa-tint menu-icon fa-2x" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">Gaz<i class="fa fa-burn menu-icon fa-2x" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">Mobil Faturasi<i class="fa fa-mobile menu-icon fa-2x" aria-hidden="true"></i>
-                                </a>
-                        </li>
-                    </ul>
+        <h2 class="game-option-header neonText">GOOGLE PLAY</h2>
+        <article class="finish" style="background-image:url('https://i.pinimg.com/originals/4d/9d/3f/4d9d3f0f71a32bdd3d19d0b572bab2c1.jpg');">
+            <section class="content bgcolor-3">
+                <div class="bg-img" style="padding: 100px;">
+                    <div class="container">
+                        <div class="forms" style="background-color: #fffff985; padding: 25px; border-radius: 25px;">
+                            <div class="row">
+                                <div class="col-m-6">
+                                    <img src="https://img.icons8.com/color-glass/90/000000/google-play.png"/>
+                                        <h2 style="color:#333"> GOOGLE PLAY 25TL</h2>
+                                </div>
+                                <hr>
+                                <div class="col-m-12">
+                                    <div class="box" style="margin: 0px 38%">
+                                        <h2>ADD YOUR INFO</h2>                                        
+                                        <form>
+                                            <div class="group">      
+                                                <input type="text" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                <label>NUMARA</label>
+                                            </div>
+                                            <div class="group">      
+                                                <input type="text" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                <label>Quantity ( Default )</label>
+                                            </div>
+                                            <div class="container">	
+                                                <div class="btn">
+                                                    <span>SATIN AL</span>
+                                                    <div class="dot"></div>
+                                                </div>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <section class="cards">
-                    <article class="card card--1" style="margin-top: 20px;">
-                        <div class="card__info-hover">   
-                        </div>
-                        <div class="card__img"></div>
-                        <a href="game-option.html" class="card_link">
-                            <div class="card__img--hover"></div>
-                        </a>
-                        <div class="card__info">
-                            <span class="card__category"> Google Play</span>
-                        </div>
-                    </article>
-                    <article class="card card--2">
-                        <div class="card__info-hover"> 
-                        </div>
-                        <div class="card__img"></div>
-                        <a href="#" class="card_link">
-                            <div class="card__img--hover"></div>
-                        </a>
-                        <div class="card__info">
-                            <span class="card__category"> Pubg</span>
-                        </div>
-                    </article> 
-                </section>
-        </div>
+            </section> 
+        </article>
         <footer>
             <section class="section-footer">
                 <div class="container">
-                <div class="row">
-                    <div class="col-4">
-                    <h3>Call Us</h3>
-                    <p><img src="https://img.icons8.com/nolan/64/phone-disconnected.png" width="30" height="30"/> +90 537 450 47 41 </p>
-                    <p><img src="https://img.icons8.com/office/16/000000/gmail-login.png" width="30" height="30"/> yasser.mayati1@gmail.com</p>
-                    </div>
-                    <div class="col-4">
-                    <h3>Our Adress</h3>
-                    <p><img src="https://img.icons8.com/dusk/64/000000/home.png" width="30" height="30"/> Kahramanmaras</p>
-                    <p>Dumlupinar Mah.</p>
-                    <p>Sait Zarifoglu Blv.</p>
-                    </div>
-                    <div class="col-4">
-                    <h3>For US</h3>
-                    <iframe src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials">
-                    </iframe>
-                    </div>
+                  <p>copy right</p>
                 </div>
-                </div>
-            </section>
-        </footer>
+              </section>
+          </footer>
         <script script src="../js/all.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script src="../js/jquery-3.6.0.min.js"></script>
