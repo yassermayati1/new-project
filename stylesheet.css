@@ -1113,3 +1113,13 @@ display: block;
 80% {transform: translateX(0) rotate(180deg);}
 100% {transform: translateX(0) rotate(360deg);}
 }
+/**************setting*************************/
+.invoice-info{
+  text-align: center;
+    padding: 12px;
+    background-color: #d1d1d1;
+}
+a>.invoice-info {
+  text-decoration: none;
+  color: #000;
+}
