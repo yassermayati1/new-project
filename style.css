@@ -157,6 +157,29 @@ body{
   min-height: 100%;
   justify-content: center;
   padding: var(--spacing-xxl) var(--spacing-l);
+  
+
+}
+.fatura-sections{
+  background-color: #a3a2a2;
+  text-align: center;
+  padding-top: 10px;
+}
+.one-fatura.active{
+
+  background-color: #fff  ;
+  color: #000;
+  border-radius: 10px 10px 0 0;
+}
+.one-fatura p{
+  margin: 0px;
+  padding-bottom: 10px;
+
+}
+.one-fatura a{
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 10px;
 }
 
 .cardo-grid{
@@ -1700,4 +1723,13 @@ display: block;
   border: none;
   color: #000 ;
 
+}
+.paketler{
+  padding: 30px;
+  margin: 30px;
+  background-color: #2855ac;
+  color: #fff;
+  border-radius: 12px;
+  width: 100%;
+  text-align: center;
 }
